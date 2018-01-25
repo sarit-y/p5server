@@ -12,9 +12,9 @@ const fs = require('fs');
 let prevData;
 
 let server = http.createServer(handleRequest);
-server.listen(PORT);
+server.listen(process.env.PORT || PORT);
 
-console.log('Server started on port ' + PORT);
+console.log('Server started on port ' + (process.env.PORT || PORT));
 
 function handleRequest(req, res) {
   // What did we request?
